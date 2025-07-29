@@ -7,6 +7,10 @@ import { useAuth } from "@/hooks/useAuth";
 import NotFound from "@/pages/not-found";
 import Landing from "@/pages/landing";
 import Dashboard from "@/pages/dashboard";
+import ThreatGraphPage from "@/pages/threat-graph";
+import ReportsPage from "@/pages/reports";
+import TeamPage from "@/pages/team";
+import PlaybooksPage from "@/pages/playbooks";
 
 function Router() {
   const { isAuthenticated, isLoading } = useAuth();
@@ -18,6 +22,11 @@ function Router() {
       ) : (
         <>
           <Route path="/" component={Dashboard} />
+          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/threat-graph" component={ThreatGraphPage} />
+          <Route path="/reports" component={ReportsPage} />
+          <Route path="/team" component={TeamPage} />
+          <Route path="/playbooks" component={PlaybooksPage} />
         </>
       )}
       <Route component={NotFound} />

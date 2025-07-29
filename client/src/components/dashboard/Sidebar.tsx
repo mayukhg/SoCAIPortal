@@ -1,4 +1,5 @@
 import { useAuth } from "@/hooks/useAuth";
+import { useLocation } from "wouter";
 import { 
   Shield, 
   LayoutDashboard, 
@@ -13,15 +14,17 @@ import {
 
 export default function Sidebar() {
   const { user } = useAuth();
+  const [location, setLocation] = useLocation();
 
   const navigation = [
-    { name: "Dashboard", icon: LayoutDashboard, current: true },
-    { name: "Alerts", icon: AlertTriangle, count: 23 },
-    { name: "Investigations", icon: Search },
-    { name: "Threat Graph", icon: Share2 },
-    { name: "Analytics", icon: TrendingUp },
-    { name: "Reports", icon: FileText },
-    { name: "Team", icon: Users },
+    { name: "Dashboard", icon: LayoutDashboard, current: true, route: "dashboard" },
+    { name: "Alerts", icon: AlertTriangle, count: 23, route: "alerts" },
+    { name: "Investigations", icon: Search, route: "investigations" },
+    { name: "Threat Graph", icon: Share2, route: "threat-graph" },
+    { name: "Analytics", icon: TrendingUp, route: "analytics" },
+    { name: "Reports", icon: FileText, route: "reports" },
+    { name: "Team", icon: Users, route: "team" },
+    { name: "Playbooks", icon: Settings, route: "playbooks" },
   ];
 
   return (
@@ -41,11 +44,11 @@ export default function Sidebar() {
         {navigation.map((item) => {
           const Icon = item.icon;
           return (
-            <a
+            <button
               key={item.name}
-              href="#"
-              className={`flex items-center space-x-3 px-3 py-2 rounded-lg transition-colors ${
-                item.current
+              onClick={() => setLocation(`/${item.route}`)}
+              className={`flex items-center space-x-3 px-3 py-2 rounded-lg transition-colors w-full text-left ${
+                location === `/${item.route}` || (location === "/" && item.route === "dashboard")
                   ? "bg-indigo-600 text-white"
                   : "text-dark-300 hover:bg-dark-800 hover:text-white"
               }`}
@@ -57,7 +60,7 @@ export default function Sidebar() {
                   {item.count}
                 </span>
               )}
-            </a>
+            </button>
           );
         })}
       </nav>
