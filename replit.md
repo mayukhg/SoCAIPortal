@@ -116,3 +116,13 @@ Preferred communication style: Simple, everyday language.
 - `REPL_ID` and `ISSUER_URL`: Replit Auth configuration
 
 The application follows a modern full-stack architecture with clear separation of concerns, type safety throughout, and real-time capabilities to support the demanding requirements of security operations centers.
+
+## Recent Changes
+- Complete SOC portal implementation with all advanced features
+- AI-powered alert triage system using OpenAI GPT-4o  
+- Real-time dashboard with WebSocket integration and KPI monitoring
+- Role-based authentication and multi-tier user management
+- Advanced features: Threat correlation graph, automated reports, team management, playbook builder
+- Interactive network visualization for threat analysis
+- Comprehensive documentation with architecture overview and component analysis
+- Sample security alerts and realistic investigation workflows
