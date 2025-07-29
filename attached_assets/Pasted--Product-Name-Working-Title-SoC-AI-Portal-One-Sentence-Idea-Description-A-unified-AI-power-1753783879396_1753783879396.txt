@@ -1,0 +1,94 @@
+🛡️ Product Name (Working Title)
+SoC-AI Portal
+
+🧠 One-Sentence Idea Description
+A unified, AI-powered Security Operations Center (SoC) web app that supports Tier 1–3 analysts by triaging alerts, simplifying investigations, enabling proactive threat detection, and streamlining reporting — all from a single dashboard.
+
+👥 Target Audience
+Tier 1 analysts → Need fast triage and prioritization of alerts
+
+Tier 2 analysts → Focused on investigations, script analysis, threat correlation
+
+Tier 3 analysts / Managers → Focused on high-risk threat patterns, custom reporting, and SoC KPIs
+
+Use cases: SoC command center, remote incident response, daily security operations
+
+🧭 User Journey / Flow
+Tier 1 logs in and sees a prioritized list of AI-triaged alerts with suggested actions
+
+Escalated alerts move to Tier 2, who uses AI to automate script analysis and correlate threat intelligence
+
+Tier 3 views high-risk insights, gets deep threat context, and auto-generated role-based reports
+
+Analysts can @tag each other, comment on alerts, and assign tasks within the platform
+
+SoC managers view dashboards showing MTTD, MTTR, false positives, and escalation rates
+
+🛠️ Core Features
+🔔 Real-time AI-prioritized alert feed
+
+💬 AI chat assistant for guided investigations
+
+🌐 Threat graph visualizer showing cross-tool correlations
+
+📄 Automated, role-based report generator (Tier 3 + management)
+
+🧑‍🤝‍🧑 Analyst collaboration tools: tagging, comments, task assignment
+
+📊 SoC KPI dashboard: MTTD, MTTR, false positives, escalation rates
+
+🔁 Workflow handoff from Tier 1 → 2 → 3
+
+💻 Platform
+Primary: Web app with internal dashboard
+
+Future: Slack and Microsoft Teams plugins
+
+🧠 AI & Tech Stack
+LLMs (e.g., OpenAI, Claude) for triage summaries, report generation, and investigation assistance
+
+Embeddings for semantic search across logs and investigations
+
+Real-time updates using websockets or pub/sub systems (e.g., Supabase Realtime, Firebase, or Redis Streams)
+
+Backend logging from SIEM, SOAR, EDR, AWS CloudTrail, CloudWatch, Azure logs
+
+🔐 Security & Auth
+Basic login for MVP
+
+Planned: Role-Based Access Control (RBAC) for tier-specific access and views
+
+Optional SSO via enterprise identity providers in future
+
+🧱 Data to Store
+Ingested logs (SIEM, SOAR, EDR, CloudTrail, CloudWatch, Azure logs)
+
+Alert metadata and AI summaries
+
+Analyst activity (notes, tags, handoffs)
+
+Reports and audit trails
+
+KPI metrics: MTTD, MTTR, false positives, escalations
+
+🎨 Design Vibe
+Minimal, sleek, intuitive
+
+Clear focus areas, modern layout, no clutter
+
+Think: Linear meets Panther meets Notion — for SoC teams
+
+🧭 Future Feature Ideas
+🔗 Slack / Teams integrations
+
+🧪 Threat emulation sandbox
+
+🧰 Custom playbook builder
+
+📚 MITRE ATT&CK mapping
+
+🧩 Plugin support for custom tools
+
+✅ Integration with Jira / ServiceNow for automated ticketing
+
+📄 Exportable compliance reporting (SOC2, ISO, etc.)
