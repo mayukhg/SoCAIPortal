@@ -77,7 +77,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         title: alertData.title,
         description: alertData.description,
         source: alertData.source,
-        sourceUser: alertData.sourceUser,
+        sourceUser: alertData.sourceUser || undefined,
         severity: alertData.severity,
       });
 
